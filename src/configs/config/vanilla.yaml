@@ -1,0 +1,138 @@
+data:
+  dataset_yaml: 'src/datasets/dataset.yaml'
+  dataset: ['evrealhands', 'interhand'] # , 'interhand'
+  smplx_path: './models/mano'
+
+model:
+  arch: 'EvRGBmetro_vanilla'
+  num_feature_levels: 3
+  backbone: 'resnet34'
+  pos_type: 'sine'
+  patch_size: 3
+  mask: True
+  mask_ratio: 0.15
+  backbone_num_channels: 128
+  hidden_dim: 256
+  enc_layers: 6
+  dec_layers: 6
+  temporal_attention_layers: 1
+  dim_feedforward: 1024
+  nhead: 8
+  dropout: 0.1
+  enc_n_points: 4
+  dec_n_points: 4
+  with_box_refine: True
+  aux_loss: True
+  query_selection: False
+  learnable_upsample: True
+
+    
+exper:
+  amp: False
+  debug: False
+  run_eval_only: False
+  resume_checkpoint: 'None'
+  num_workers: 12
+  output_dir: './output/evrgbhand_vanilla'
+  per_gpu_batch_size: 32
+  lr: 0.0001
+  lr_backbone: 0.00001
+  lr_backbone_names: ['backbone.layer']
+  num_train_epochs: 60
+  device: 'cuda'
+  seed: 88
+  distributed: True
+  supervision: True
+  use_gt: False
+  use_2d_joints: True
+  preprocess:
+    left_window: [3000, 1000000]
+    ev_repre: 'LNES' #'Lnes', 'eci'
+    event_range: 'bbox' # 'time' bbox
+    num_window: 7000
+    num_var: 2000
+    event_rate: 0.4
+    cam_view: 'event' # 'world', 'rgb', 'event
+    steps: 1
+    segments: 1
+  augment:
+    geometry:
+      scale: 0.05
+      trans: 0.05
+      rot: 0.2
+    rgb_photometry:
+      motion_blur: 0.1
+      colorjitter:
+        p: 0.1
+        brightness: [0.9, 4.0]
+        contrast: 0.2
+      gauss:
+        var: [0.05, 0.2]
+        p: 0.1
+      gaussianblur:
+        p: 0.1
+        kernel_size: [7, 11]
+        sigma: [1, 4]
+      salt_pepper:
+        p: 0.05
+        rate: 0.05
+    event_photometry:
+      colorjitter:
+        p: 0.0
+        brightness: 0.5
+        contrast: 0.4
+      gauss:
+        var: [0.05, 0.1]
+        p: 0.05
+      gaussianblur:
+        p: 0.
+        kernel_size: 15
+        sigma: [0.5, 3.]
+      salt_pepper:
+        p: 0.05
+        rate: 0.05
+  bbox:
+    rate: 1.6
+    rate_interhand: 1.6
+    rgb:
+      size: 192
+    event:
+      size: 192
+  loss:
+    is_temporal: True
+    vertices: 100.0
+    vertices_sub: 100.0
+    3d_joints: 500.0
+    3d_joints_from_mesh: 500.0
+    2d_joints: 100.0
+    2d_joints_from_mesh: 100.0
+    joints_hm: 100.0
+    aux_loss_weight: 0.1
+    seg_rgb: 10.0
+    seg_event: 10.0
+    2d_joints_rgb: 50.
+    2d_joints_event: 50.
+    label_smoothing: 0.1
+    scene: 2.0
+    edge_loss_weight: 1.0
+    normal_loss_weight: 0.1
+    edge_normal_loss_weight: 50.0
+
+eval:
+  fast: False
+  multiscale_inference: False
+  augment:
+    rot: 0
+    scale: 1.0
+  fast_fps: 120
+  fast_window: 5000
+  output:
+    save: False
+    mesh: True
+    attention_map: True
+    errors: True
+    rendered: True
+    vis_rendered: 'event'
+
+utils:
+  logging_steps: 100

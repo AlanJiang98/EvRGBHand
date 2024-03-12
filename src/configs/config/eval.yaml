@@ -1,0 +1,36 @@
+data:
+  dataset_yaml: 'src/datasets/dataset.yaml'
+  dataset: ['evrealhands']
+  smplx_path: './models/mano'
+
+exper:
+  debug: False
+  num_workers: 4
+  per_gpu_batch_size: 4
+  run_eval_only: True
+  preprocess:
+    ev_repre: 'LNES' #'Lnes', 'eci'
+    event_range: 'bbox' # 'time'， ‘num’
+    num_window: 7000
+    steps: 1
+    segments: 1
+
+eval:
+  fast_fps: 15 #120
+  fast_window: 5000
+  multiscale: False
+  output:
+    save: True
+    mesh: False
+    attention_map: False
+    errors: True
+    rendered: False
+    vis_rendered: 'event'
+    vis_event: False
+    vis_rgb: False
+  augment:
+    scale: 0.0
+    rot: 0.0
+    trans: 0.0
+utils:
+  logging_steps: 10

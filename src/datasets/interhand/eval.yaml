@@ -1,0 +1,8 @@
+cap_ids: [0, 1, 2, 3, 5, 6, 7, 8, 9]
+super_ids: [0,1,2]
+img_dir: 'train'
+event_dir: 'synthetic/train'
+cam_path: 'annot/InterHand2.6M_train_camera.json'
+joint_path: 'annot/InterHand2.6M_train_joint_3d.json'
+mano_path: 'annot/InterHand2.6M_train_MANO_NeuralAnnot_new.json'
+camera_pairs: [['400002', '400002'], ['400004', '400004']]#, ['400004', '400009'], ['400009', '400018'], ['400018', '400026'], ['400026', '400039'], ['400039', '400041'], ['400041', '400053'], ['400053', '400002']]#, ['event', '21320029'], ['event', '21320030'], ['event', '21320034'], ['event', '21320035'], ['event', '21320036']]

@@ -1,0 +1,5 @@
+sub_ids: [1, 3]
+seq_ids_path: 'id_seq_right.json'
+name_map_path: 'name_map.json'
+trace_map_path: 'trace_map.json'
+camera_pairs: [['event', '21320028']] 

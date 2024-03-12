@@ -1,0 +1,42 @@
+# compilation and distribution
+__pycache__
+_ext
+*.py[cod]
+*.so
+*.egg
+*.egg-info
+dist
+build
+
+# data and result
+manopth
+output/
+output_new/
+result/
+result_new/
+cmd.sh
+
+# config on server
+src/configs/config_server/
+# pytorch/python formats
+*.pth
+
+
+# ipython/jupyter notebooks
+*.ipynb
+**/.ipynb_checkpoints/
+
+# Editor temporaries
+*.swn
+*.swo
+*.swp
+*~
+
+# Pycharm editor settings
+.idea
+
+# VS code 
+.vscode
+
+# MacOS
+.DS_Store
