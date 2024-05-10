@@ -1,6 +1,6 @@
 # EvRGBHand [CVPR'24] ✨✨
 
-[[Project Page](https://alanjiang98.github.io/evrgbhand.github.io/)]  [[Data](https://www.dropbox.com/scl/fi/x3bmfw2tfmqaghagb6alx/EvRealHands.zip)] [[Paper](https://arxiv.org/abs/2403.07346)]
+[[Project Page](https://alanjiang98.github.io/evrgbhand.github.io/)]  [[Data](https://www.dropbox.com/scl/fi/x3bmfw2tfmqaghagb6alx/EvRealHands.zip)] [[Paper](https://arxiv.org/abs/2403.07346)] [[Models](https://drive.google.com/file/d/19dB8KSkdk502l4hZQUY3Eo24Vcw1tHBH/view?usp=drive_link)]
 
 - This is the official PyTorch implementation of [Complementing Event Streams and RGB Frames for Hand Mesh Reconstruction](https://github.com/AlanJiang98/EvRGBHand).
 - This work investigates the feasibility of using events and images for HMR, and proposes the first solution to 3D HMR by complementing event streams and RGB frames.
@@ -29,9 +29,11 @@ pip install -r requirements.txt
 Our codebase is developed based on Ubuntu 23.04 and NVIDIA GPU cards. 
 
 
-### Train
+### Data Preparation
 - Download the EvRealHands dataset from [EvHandPose](https://alanjiang98.github.io/evhandpose.github.io/) and change the path in the ``src/datasets/dataset.yaml`` .
 - Download MANO models from [MANO](https://mano.is.tue.mpg.de/download.php). Put the ```MANO_LEFT.pkl``` and ```MANO_RIGHT.pkl``` to ```models/mano```.
+
+### Train
 - Modify the config file in ``src/configs/config`` .
 
 ```shell
@@ -57,4 +59,19 @@ python train.py --config src/configs/config/evrgbhand.yaml --resume_checkpoint o
       booktitle={CVPR},
       year={2024}
 }
+
+@article{jiang2024evhandpose,
+  author    = {Jianping, Jiang and Jiahe, Li and Baowen, Zhang and Xiaoming, Deng and Boxin, Shi},
+  title     = {EvHandPose: Event-based 3D Hand Pose Estimation with Sparse Supervision},
+  journal   = {TPAMI},
+  year      = {2024},
+}
 ```
+
+## Acknowledgement
+- Our code is based on [FastMETRO](https://github.com/postech-ami/FastMETRO). 
+- In our experiments, we use the official code of [MeshGraphormer](https://github.com/microsoft/MeshGraphormer), [FastMETRO](https://github.com/postech-ami/FastMETRO), [EventHands](https://github.com/r00tman/EventHands) for comparison. We sincerely recommend that you read these papers to fully understand the method behind EvRGBHand.
+
+## Related Projects
+- [EvHandPose: Event-based 3D Hand Pose Estimation with Sparse Supervision](https://alanjiang98.github.io/evhandpose.github.io/)
+- [EvPlug: Learn a Plug-and-Play Module for Event and Image Fusion](https://arxiv.org/abs/2312.16933)
