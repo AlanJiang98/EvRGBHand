@@ -1,5 +1,7 @@
 # EvRGBHand [CVPR'24] ✨✨
 
+[[Project Page](https://alanjiang98.github.io/evrgbhand.github.io/)]  [[Data](https://www.dropbox.com/scl/fi/x3bmfw2tfmqaghagb6alx/EvRealHands.zip)] [[Paper](https://arxiv.org/abs/2403.07346)]
+
 - This is the official PyTorch implementation of [Complementing Event Streams and RGB Frames for Hand Mesh Reconstruction](https://github.com/AlanJiang98/EvRGBHand).
 - This work investigates the feasibility of using events and images for HMR, and proposes the first solution to 3D HMR by complementing event streams and RGB frames.
 <div  align="center">    
@@ -28,7 +30,8 @@ Our codebase is developed based on Ubuntu 23.04 and NVIDIA GPU cards.
 
 
 ### Train
-- Download the EvRealHands dataset from [EvHandPose](https://github.com/AlanJiang98/EvRGBHand) and change the path in the ``src/datasets/dataset.yaml`` .
+- Download the EvRealHands dataset from [EvHandPose](https://alanjiang98.github.io/evhandpose.github.io/) and change the path in the ``src/datasets/dataset.yaml`` .
+- Download MANO models from [MANO](https://mano.is.tue.mpg.de/download.php). Put the ```MANO_LEFT.pkl``` and ```MANO_RIGHT.pkl``` to ```models/mano```.
 - Modify the config file in ``src/configs/config`` .
 
 ```shell

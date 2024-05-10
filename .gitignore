@@ -15,6 +15,7 @@ output_new/
 result/
 result_new/
 cmd.sh
+models/
 
 # config on server
 src/configs/config_server/
