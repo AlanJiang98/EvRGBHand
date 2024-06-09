@@ -1,6 +1,6 @@
 # EvRGBHand [CVPR'24] ✨✨
 
-[[:page_with_curl:Project Page](https://alanjiang98.github.io/evrgbhand.github.io/)]  [[Data](https://www.dropbox.com/scl/fi/x3bmfw2tfmqaghagb6alx/EvRealHands.zip)] [[Paper](https://arxiv.org/abs/2403.07346)] [[Models](https://drive.google.com/file/d/19dB8KSkdk502l4hZQUY3Eo24Vcw1tHBH/view?usp=drive_link)]
+[[:page_with_curl:Project Page](https://alanjiang98.github.io/evrgbhand.github.io/)]  [[Data](https://www.dropbox.com/scl/fo/fknqrn1jb2bh9088gqw8w/AFiaujVeKt36ee2Roc8q8VE?rlkey=21atcy255w45z3du2whz4uzpb&e=2&st=dfsiib22&dl=0)] [[Paper](https://arxiv.org/abs/2403.07346)] [[Models](https://drive.google.com/file/d/19dB8KSkdk502l4hZQUY3Eo24Vcw1tHBH/view?usp=drive_link)]
 [[:movie_camera:Video](https://www.youtube.com/watch?v=cEVkQ10fWh0)]
 
 *This is the official PyTorch implementation of [Complementing Event Streams and RGB Frames for Hand Mesh Reconstruction](https://github.com/AlanJiang98/EvRGBHand).This work investigates the feasibility of using events and images for HMR, and proposes the first solution to 3D HMR by complementing event streams and RGB frames.*
